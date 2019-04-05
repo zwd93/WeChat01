@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库驱动 -->
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<!-- 数据库URL -->
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@106.14.205.206:1521:rjs</property>
+		<!-- 数据库连接用户名 -->
+		<property name="hibernate.connection.username">xmgl</property>
+		<!-- 数据库连接密码 -->
+		<property name="hibernate.connection.password">aspnet</property>
+		<!-- 数据库方言 -->
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		
+		<!-- 把hibernate执行sql语句打印到控制台 -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- 把生成的sql格式化一下，方便阅读 -->
+		<property name="hibernate.formate_sql">true</property>
+		<!-- 自动建表 -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<!-- 引入ORM元数据配置，即加载映射文件。路径填写：src目录下路径 -->
+		<mapping resource="com/bean/Wxuser.hbm.xml" />
+		<mapping resource="com/bean/TA_TASK.hbm.xml" />
+	</session-factory>
+
+</hibernate-configuration>
